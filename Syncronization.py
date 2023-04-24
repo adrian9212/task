@@ -7,6 +7,8 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 class MonitorFolder(FileSystemEventHandler):
+    
+    #on_created function will be called when a file is created or copied in the source folder
     def on_created(self, event):
          print(event.src_path, event.event_type)
          logging.info(event.event_type + ' at ' + event.src_path)
